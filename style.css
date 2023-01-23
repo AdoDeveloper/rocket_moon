@@ -1,0 +1,136 @@
+
+
+#video_background {
+	position: absolute;
+	bottom: 0px;
+	right: 0px;
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	height: auto;
+	z-index: -1000;
+	overflow: hidden;
+	}
+#text{
+	z-index: -1;
+	color: rgb(255, 255, 255);
+		width: 705px;   
+		height: 5%;    
+		bottom: 36%;
+		position: absolute;
+		top:60%;
+		left: 10%;
+		font-size: 0.5rem;
+		font-family: monospace;
+		animation: texto 5s
+		steps(30), barra 0.5s
+		step-end infinite alternate;
+		white-space: nowrap;
+		overflow: hidden;
+		border-right: 2px solid;
+}
+
+@keyframes texto {
+	from{
+		width: 0;
+	}
+}
+
+@keyframes barra{
+	50%{
+		border-color: transparent;
+	}
+}
+
+#moon{
+	z-index: 1;
+	transform: rotate(350deg);
+	display: block;
+	padding: 80px;
+	margin: 1px;
+	position: absolute;
+	width: 30vh;
+	height: 30vh;
+}
+#planet{
+	z-index: 1;
+	width: 600px;
+	height: 600px;
+	float: right;
+}
+.rocket{
+	z-index: -1;
+	position: absolute;
+	padding: 5px;
+	margin: 5px;
+	width:300px;
+	height:380px;
+	animation-name: spin;
+	animation:spin 15s linear infinite;
+
+}
+@keyframes spin{ 
+	0% { -webkit-transform: rotate(0deg);transform:rotate(0deg);}
+	25% { -webkit-transform: rotate(90deg);transform:rotate(90deg);}
+	50% { -webkit-transform: rotate(180deg);transform:rotate(180deg);}
+	75% { -webkit-transform: rotate(270deg);transform:rotate(270deg);}
+	100% { -webkit-transform: rotate(360deg);transform:rotate(360deg);} 
+}
+
+@media screen and (min-width: 200px) and (max-width: 900px){
+    #moon{
+		z-index: 1;
+	width: 100px;
+	height: 100px;
+	float: left;
+	position: absolute;
+    display: flex;
+    top:70%;
+    left: 0vh;
+    margin-top: -600px;
+    }
+    #planet{
+	z-index: 1;
+	float: right;
+    padding: 10px;
+    width: 400px;       
+    height: 400px;
+    position: fixed;
+    top:70%;
+    right: 0px;
+    margin-top: -100px;
+    }
+     #text{
+		white-space:normal;
+		display: flex;
+		justify-items: center;
+		justify-content: center;
+		margin: auto;
+		padding: 65px;
+		border-radius: 20px;
+		width: 60%;       
+		height:10%;
+		display: flex;
+		top:45%;
+		right: 16px;
+		left: 16px;
+		margin-top: -100px;
+		background-color: #fbfbfc;
+		background: rgba(255, 255, 255, 0.07);
+		border-radius: 16px;
+		box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+		backdrop-filter: blur(2.4px);
+		-webkit-backdrop-filter: blur(2.4px);
+		border: 1px solid rgba(255, 255, 255, 1);
+	 }
+    .rocket{
+		width: 160px;
+		height: 200px;
+		top:65%;
+		margin-top: -550px;
+		padding: 8px;
+		position: absolute;
+		top:70%;
+		margin-top: -600px;
+    }
+}
